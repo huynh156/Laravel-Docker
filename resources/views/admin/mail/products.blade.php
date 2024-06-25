@@ -1,18 +1,8 @@
 
 
-@section('title', 'Product Index')
 
     <div class="container">
         <h1>Product List</h1>
-        
-        <h2>Categories</h2>
-        <ul>
-             @foreach($categories as $category)
-                    <li>{{ $category->name }}</li>
-            @endforeach 
-        </ul>
-        
-        <h2>Products</h2>
         <table>
             <thead>
                 <tr>

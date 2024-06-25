@@ -36,7 +36,17 @@ return [
     */
 
     'mailers' => [
-
+        'from' => [
+            'address' => env('MAIL_FROM_ADDRESS', '2000005479@nttu.edu.vn'),
+            'name' => env('MAIL_FROM_NAME', 'Huynh'),
+        ],
+        'postmark' => [
+            'transport' => 'postmark',
+            'message_stream_id' => env('POSTMARK_MESSAGE_STREAM_ID'),
+            // 'client' => [
+            //     'timeout' => 5,
+            // ],
+        ],
         'smtp' => [
             'transport' => 'smtp',
             'url' => env('MAIL_URL'),
@@ -48,17 +58,15 @@ return [
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url(env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
         ],
-
-        'ses' => [
-            'transport' => 'ses',
-        ],
-
-        'postmark' => [
-            'transport' => 'postmark',
-            // 'message_stream_id' => env('POSTMARK_MESSAGE_STREAM_ID'),
+        'mailgun' => [
+            'transport' => 'mailgun',
             // 'client' => [
             //     'timeout' => 5,
             // ],
+        ],
+
+        'ses' => [
+            'transport' => 'ses',
         ],
 
         'resend' => [

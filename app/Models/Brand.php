@@ -8,19 +8,10 @@ use Illuminate\Support\Str;
 class Brand extends Model
 {
     use HasFactory;
-    public $incrementing = false;
-    protected $keyType = 'string';
 
-    protected $table = 'Brands';
-    protected $fillable = ['BrandID', 'BrandName','Desciption'];
+    protected $table = 'brand';
 
-    protected static function boot()
-    {
-        parent::boot();
+    protected $primaryKey = 'id';
+    protected $fillable = ['id', 'brandname'];
 
-        // Tự động gán GUID khi tạo model mới
-        static::creating(function ($model) {
-            $model->{$model->getKeyName()} = (string) Str::uuid();
-        });
-    }
 }

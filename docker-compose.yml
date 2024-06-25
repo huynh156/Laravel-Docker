@@ -14,9 +14,13 @@ services:
         source: ./docker/webserver/etc/apache2/sites-enabled/
         target: /etc/apache2/sites-enabled/
     environment:
-      - APACHE_LOG_DIR=/var/log/apache2
+      APACHE_LOG_DIR: /var/log/apache2
+      XDEBUG_MODE: debug
+      XDEBUG_SESSION: 1
+      XDEBUG_CONFIG: client_host=host.docker.internal
     depends_on:
       - mysql
+
   mysql:
     image: mysql:8.0.37-bookworm
     container_name: mysql

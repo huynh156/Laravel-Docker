@@ -1,4 +1,4 @@
-@extends('layouts.adminlayout')
+
 
 @section('title', 'Edit Product')
 

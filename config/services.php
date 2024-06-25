@@ -14,8 +14,15 @@ return [
     |
     */
 
+    'mailgun' => [
+        'domain' => env('MAILGUN_DOMAIN'),
+        'secret' => env('MAILGUN_SECRET'),
+        'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
+        'scheme' => 'https',
+    ],
+
     'postmark' => [
-        'token' => env('POSTMARK_TOKEN'),
+        'token' => '292a0ff8-662b-4a72-9ab6-58ea15da440b',
     ],
 
     'ses' => [
